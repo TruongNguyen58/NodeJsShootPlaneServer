@@ -663,6 +663,7 @@ game_server.onResumeGame = function(obj) {
 game_server.onReceiveRqEndGame = function(obj) {
 	var _id = obj.gameId;
 	if (games.hasOwnProperty(_id)) {
+		games[_id].scores = obj.scores;
 		endgame(_id);
 	}
 }; //game_server.onReceiveRqEndGame
